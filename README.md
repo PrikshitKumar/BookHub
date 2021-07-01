@@ -8,7 +8,9 @@ Books are fetched from Server with the help of API.
 This app has a feature to add books in Favorite, and remove from Favorite. For that, I used the Local Database for storing the data of books.
 And, for handle all the database related operations, like store the data of book to the Favorites i.e. local database, or fetch the data, etc., SQLite is used.
 
-#ScreenShots: 
+# ScreenShots: 
+
+
 ![Img_1](https://user-images.githubusercontent.com/64913497/124182895-1929ef80-dad5-11eb-8a5b-ebaa63f0e06a.jpeg)
 ![Img_2](https://user-images.githubusercontent.com/64913497/124182957-31017380-dad5-11eb-9c6a-bf436a261b74.jpeg)
 ![Img_3](https://user-images.githubusercontent.com/64913497/124182972-35c62780-dad5-11eb-81ef-3d8aee4f632d.jpeg)
