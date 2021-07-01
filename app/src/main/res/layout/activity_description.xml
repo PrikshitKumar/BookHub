@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Description">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/id_descriptionToolbar"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        />
+
+    <!--The weight sum property is used to divide the layout into
+       different parts and then giving each layout a particular weight
+       gives it that amount of space on the screen-->
+
+    <!--Since each parent layout will have a specific weight, we need
+    not give any width to those layout-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/id_descriptionToolbar"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/id_addToFavorite"
+        >
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:id="@+id/id_descriptionLinearLayout"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <ImageView
+                    android:layout_weight="1.5"
+                    android:id="@+id/id_descriptionBookIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/header_icon"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    />
+
+                <RelativeLayout
+                    android:layout_weight="3.3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/id_descriptionBookTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name of the book"
+                        android:padding="8dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/id_descriptionBookAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/id_descriptionBookTitle"
+                        android:text="Name of the Author"
+                        android:padding="8dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/id_descriptionBookPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Rs. 299"
+                        android:padding="8dp"
+                        android:layout_below="@id/id_descriptionBookAuthor"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#357a38"/>
+                </RelativeLayout>
+
+                <!--Many times we see that texts have an image along with them to
+                    their right or left. This is added with the help of the
+                    drawableLeft (or drawableRight and so on) attribute-->
+                <TextView
+                    android:id="@+id/id_descriptionBookRating"
+                    android:layout_weight="1.2"
+                    android:layout_width="0dp"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffca28"
+                    android:text="4.5"
+                    android:drawablePadding="4dp"
+                    android:drawableTint="#ffca28"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:drawableLeftCompat="@drawable/ic_rating">
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/id_descriptionLinearLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id_aboutTheBook"
+                    android:layout_centerHorizontal="true"
+                    android:padding="6dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/about_the_book"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id_descriptionAboutTheBook"
+                    android:layout_below="@+id/id_aboutTheBook"
+                    android:padding="6dp"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"
+                    android:text="@string/hello_blank_fragment"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_addToFavorite"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/add_to_favorite"
+        android:layout_margin="10dp"
+        android:padding="6dp"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_descriptionProgressBarLayout"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_descriptionProgressBar"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
